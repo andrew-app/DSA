@@ -51,7 +51,7 @@ for i in range(0, 4):
 
 
 
-maxval = 0
+maxval = sumarr[0][0]
 for k in range(0,4):
     if max(sumarr[k]) >= maxval:
         maxval = max(sumarr[k])
