@@ -1,25 +1,35 @@
-arr = [1,2,3,4,5]
 
-q = [1,3,2,5,4]
+
+q = [1,2,5,3,4]
 
 bribes = 0
 
-double = False
-for x in arr:
-    a = q.index(x)
+chaos = False
 
-    b = arr.index(x)
+for i in range(len(q)-1,0,-1):
+    if q[i] != i+1:
+        if i-1 >= 0 and q[i-1] == i+1:
+            temp = q[i-1]
+            q[i-1] = q[i]
+            q[i] = temp
+            bribes += 1
 
-    print(a,b)
-    if a != b and double == False:
-        if b-a < -2 or b-a > 2:
-            print("too chaotic")
-        
+        elif i-2 >= 0 and q[i-2] == i+1:
+            q[i-2] = q[i-1]
+            q[i-1] = q[i]
+            q[i] = q[i-2]
+            bribes += 2
 
-        bribes += 1
-        double = True
-
-    
+        else:
+            chaos = True
 
 
-print(bribes)
+if chaos is True:
+    print("Too chaotic")
+
+else:
+    print(bribes)
+
+
+
+
