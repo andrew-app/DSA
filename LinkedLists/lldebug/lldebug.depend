@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1625714921 source:/home/andrewapp/Documents/DSA/LinkedLists/lldebug/main.cpp
+	<bits/stdc++.h>
+	<iostream>
+
